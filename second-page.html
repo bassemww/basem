@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>تهنئة شخص غالي</title>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            color: rgb(15, 13, 15);
+            background: radial-gradient(circle, #9499de, #4fafad);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>happy birthday basem!! </h1>
+    <p id="message"></p>
+    
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const date = params.get('date');
+        if (name && date) {
+            const message = `إلى أعظم رجل في حياتي،عمي وابي الثاني الغالي ابو انور
+🎉اليوم هو يوم خاص جدًا، لأنه يوم ميلادك الذي أضاء حياتناة. 🎂
+كل عام وأنت السند، القوة، والأب الذي لا مثيل له.
+أدعو الله أن يمدك بالصحة والعافية، وأن يجعل كل أيامك مليئة بالفرح والسعادة.
+شكراً لأنك القدوة والمثل الأعلى الذي أفتخر به دائمًا.
+أحبك من كل قلبي ❤️، وكل عام وأنت بألف خير.
+
+ابن الغالي باسم الذي يحبك دائمًا.🎊${name}! 🎊\ tody is a special day ${date}،`;
+            document.getElementById('message').innerText = message;
+        } else {
+            document.getElementById('message').innerText = 'حدث خطأ في البيانات! حاول مرة أخرى.';
+        }
+    </script>
+</body>
+</html>

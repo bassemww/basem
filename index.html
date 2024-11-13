@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="second-page.html"></a>
+    <title>تهنئة عيد ميلاد</title>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            color: white;
+            background: radial-gradient(circle, #1b1b2f, #162447);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        input, button {
+            font-size: 1.2em;
+            padding: 10px;
+            margin: 10px 0;
+            width: calc(100% - 20px);
+            border: none;
+            border-radius: 10px;
+        }
+        button {
+            background-color: #e43f5a;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="birthdayForm">
+        <h1>enter your user</h1>
+        <input type="text" id="name" placeholder="name" required>
+        <input type="date" id="date" required>
+        <button type="submit">✨ lets Go✨</button>
+    </form>
+    <script>
+        document.getElementById('birthdayForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            if (name && date) {
+                window.location.href = `second-page.html?name=${encodeURIComponent(name)}&date=${encodeURIComponent(date)}`;
+            } else {
+                alert('يرجى ملء جميع الحقول!');
+            }
+        });
+    </script>
+</body>
+</html>
